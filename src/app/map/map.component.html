@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+
+<div class="map-container">
+  
+    <div class="map-frame">
+     
+      <div id="map">
+        <mat-card>
+          <ng-container *ngFor="let color of colors; let i = index">
+            <br>
+            <div id="rectangle" [ngStyle]="{'background': color}">
+              
+            </div>
+            <p>{{categoriasNumeros[i]}}</p>
+          </ng-container>
+          
+        </mat-card>
+
+      </div>
+    </div>
+  </div>
+
+
+
