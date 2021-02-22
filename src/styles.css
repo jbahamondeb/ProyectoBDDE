@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~leaflet/dist/leaflet.css";
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-toolbar.mat-primary {
+    background: #012042;
+    color: #fff;
+    border-style: solid;
+    border-width: 2px;
+    border-color:black;
+    font-size: 50px;
+  }
