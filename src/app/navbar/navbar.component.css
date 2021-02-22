@@ -1,0 +1,11 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  ::ng-deep .mat-toolbar{
+    height: 80px !important;
+  }
+
+  ::ng-deep .mat-toolbar .mat-icon{
+    height: 100% !important;
+    width: 100% !important;
+  }
