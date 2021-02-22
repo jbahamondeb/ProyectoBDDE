@@ -1,0 +1,228 @@
+
+ 
+  
+  #map {
+    position: relative;
+    height: 100%;
+  }
+
+
+
+  .leyenda{
+    position: absolute !important;
+    top:  0% !important;
+    left: 6% !important;
+    width: auto;
+    z-index: 100;
+    max-width: 20%;
+    width: 20%;
+   
+  }
+
+
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+#rectangle{
+    width:20px;
+    height:20px;
+    float:left;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    border: 1px solid black;
+    
+}
+
+
+
+
+.info{
+  float:left;
+  width:40% ;
+  background-color: #003c7d;
+  height:93vh;
+  border-style: solid;
+  border-width: 5px 0px 5px 5px;
+  border-color:#a3a3c2;
+  overflow: scroll;
+}
+
+.displayMapa{
+  float:left;
+  width: 60%;
+  background-color:#99b3ff;
+  height:93vh;
+  border-style: solid;
+  border-width: 5px;
+  border-color:#a3a3c2;
+}
+
+.info ::ng-deep .mat-expansion-panel {
+  background-color: #0253ab !important;
+  height: auto;
+  color:white;
+  border-style: solid;
+  border-width: 2px;
+  border-color:black;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  
+}
+
+.info ::ng-deep .mat-expansion-panel .mat-expansion-panel-header-title{
+  color:white;
+  font-size: 40px;
+  height:auto;
+}
+
+.info ::ng-deep .mat-expansion-panel .mat-content{
+  
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.info ::ng-deep .mat-expansion-panel-body p{
+  
+  margin-top: 5% !important;
+}
+
+
+.leyenda ::ng-deep .mat-expansion-panel {
+  background-color: #0253ab !important;
+  height: auto;
+  color:white;
+  border-style: solid;
+  border-width: 2px;
+  border-color:black;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  
+}
+
+
+.leyenda ::ng-deep .mat-expansion-panel .mat-expansion-panel-header-title{
+  color:white;
+  font-size: 18px;
+  height:auto;
+  
+}
+
+.leyenda p{
+  color:white !important;
+  font-size: 12px !important;
+}
+
+
+.comparacion ::ng-deep .mat-button{
+  color:white !important;
+  font-size: 20px !important;
+  background-color: purple;
+  border-radius: 25px;
+  border-color:#a3a3c2;
+  border-style: solid;
+  border-width: 2px;
+  margin-bottom: 1%;
+}
+
+.comparacion ::ng-deep .mat-button:hover{
+  color:white !important;
+  font-size: 20px !important;
+  background-color: rgb(56, 0, 56);
+  border-radius: 25px;
+  border-color:#a3a3c2;
+  border-style: solid;
+  border-width: 2px;
+  margin-bottom: 1%;
+}
+
+
+.comparacion p{
+  margin-left: 1%;
+ 
+  display: inline;
+  font-size: 18px !important;
+}
+
+::ng-deep .mat-spinner{
+  position: absolute !important;
+  z-index: 100;
+  max-width: 20%;
+  width: 20%;
+  margin-left: 22% !important;
+  margin-top: 15% !important;
+}
+
+
+.waitingData{
+  width: 59.5%;
+  height: 92%;
+  background-color: rgba(128, 128, 128, 0.381);
+
+  z-index: 50;
+  position: absolute;
+}
+
+
+::ng-deep .mat-card{
+  position: absolute !important;
+  z-index: 100;
+  top:  0% !important;
+  left: 40% !important;
+  width: auto;
+  background-color: #0253ab !important;
+  color:white
+
+}
+
+
+.ol-popup {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  bottom: 12px;
+  left: -50px;
+  min-width: 280px;
+}
+.ol-popup:after, .ol-popup:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.ol-popup:after {
+  border-top-color: white;
+  border-width: 10px;
+  left: 48px;
+  margin-left: -10px;
+}
+.ol-popup:before {
+  border-top-color: #cccccc;
+  border-width: 11px;
+  left: 48px;
+  margin-left: -11px;
+}
+.ol-popup-closer {
+  text-decoration: none;
+  position: absolute;
+  top: 2px;
+  right: 8px;
+}
+.ol-popup-closer:after {
+  content: "x";
+}
+
+
+::ng-deep .layer-switcher {
+  position: absolute;
+  top: 0% !important;
+}
+
+

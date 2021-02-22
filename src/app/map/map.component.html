@@ -1,0 +1,315 @@
+<app-navbar></app-navbar>
+
+
+<div class="info">
+  <mat-accordion>
+
+    <!-- ¿Quienes somos? -->
+    <mat-expansion-panel (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false" [togglePosition]="'before'" #panel  hideToggle>
+    <mat-expansion-panel-header>
+      
+    <mat-panel-title>
+     
+      
+    ¿Quienes somos?
+    </mat-panel-title>
+    <mat-icon >{{panel.expanded? 'remove' : 'add'}}</mat-icon>
+
+    </mat-expansion-panel-header>
+    <hr>
+    <p style="font-size: 20px;">Hola! #SalDeTuBurbuja es un proyecto que busca que las personas se den cuenta que no todo es como la realidad en la que mide. 
+      Esto lo realizamos a través de distintos indicadores y funcionalidades novedosas que ponen a prueba la calidad de vida de cada Comuna. Toda la información utilizada en este proyecto,
+    se encuentra respaldada por fuentes del Gobierno. </p>
+    
+
+    
+
+    </mat-expansion-panel>
+
+   
+
+    <!-- Niveles de educación -->
+     <mat-expansion-panel (opened)="panelOpenState = true"
+     (closed)="panelOpenState = false" [togglePosition]="'before'" #panel  hideToggle>
+   <mat-expansion-panel-header>
+     
+   <mat-panel-title>
+    
+     
+    Niveles de Educación.
+   </mat-panel-title>
+   <mat-icon >{{panel.expanded? 'remove' : 'add'}}</mat-icon>
+
+   </mat-expansion-panel-header>
+   <hr>
+   <p>Tomando como base los resultados del <a href="http://www.censo2017.cl/" target="_blank">CENSO 2017</a>, se encontró el número de personas que como MÁXIMO hayan llegado hasta los grados mostrados a continuación. Luego de esto, se calculó este valor cada cien mil personas, en base a la cantidad de habitantes de cada comuna en particular.</p>
+   
+   <div class="comparacion">
+     <button mat-button color="primary" (click)="paintMap('IndiceEducacionBasica','indiceFin', 'EducacionBasica')">• Educación Básica: </button>
+     <p> Este indicador muestra que tantas personas por comuna alcanzaron como máximo el nivel de educación básica. Cuanto menor sea este indicador, se puede suponer que mayor cantidad de sus habitantes tiene niveles de estudios altos.</p>
+     <br>
+     <button mat-button color="primary" (click)="paintMap('IndiceEducacionMedia','indiceFin', 'EducacionMedia')">• Educación Media: </button>
+     <p> Este indicador muestra que tantas personas por comuna alcanzaron como máximo el nivel media. Se contabilizaron los establecimientos Científico-humanista, Técnica profesional y de Humanidades. En este caso, se prefiere que este indicador sea mayor, dado que de esta forma como mínimo, más personas de la comuna aprobaron la enseñanza media.</p>
+     <br>
+     <button mat-button color="primary" (click)="paintMap('IndiceTecnicos','indiceFin2', 'Tecnicos')">• Técnicos: </button>
+     <p> Este indicador muestra que tantas personas por comuna, optaron por transformarse en Técnicos profesionales (1-3 años de estudio). Esto puede indicar si ciertas Comunas están más enfocadas en forjar técnicos que profesionales</p>
+     <br>
+     <button mat-button color="primary" (click)="paintMap('IndiceProfesionales','indiceFin', 'Profesionales')">• Profesionales: </button>
+     <p> Este indicador muestra que tantas personas por comuna, optaron por transformarse en profesionales (4 años de estudio). Esto puede indicar si ciertas Comunas están más enfocadas en forjar profesionales que técnicos</p>
+     <br>
+     <button mat-button color="primary" (click)="paintMap('IndicePostgrados','indiceFin', 'Postgrados')">• Postgrados: </button>
+     <p> Este indicador meustra que tantas personas por comuna, optaron por desarrollar algun grado de postgrado. Se considera como postgrado a un Magister o un Doctorado. </p>
+   </div>
+
+   </mat-expansion-panel>
+
+
+    <!-- Indices de desarrollo comunal -->
+    <mat-expansion-panel (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false" [togglePosition]="'before'" #panel  hideToggle>
+    <mat-expansion-panel-header>
+      
+    <mat-panel-title>
+     
+      
+    Índices de desarrollo comunal.
+    </mat-panel-title>
+    <mat-icon >{{panel.expanded? 'remove' : 'add'}}</mat-icon>
+
+    </mat-expansion-panel-header>
+    <hr>
+    <p>A raíz de un estudio desarrollado por la <a href="https://ichem.uautonoma.cl/indice-de-desarrollo-comunal-idc-chile-2020/" target="_blank">Universidad Autónoma de Chile</a> en el año 2020, en el cual agruparon 13 variables en tres dimensiones: Salud y Bienestar Social; Economía y Recursos; y Educación, se calculó el Índice de desarollo Comunal (IDC). El IDC es un índice compuesto, construido para representar información proveniente de diversas fuentes, que busca medir distintos aspectos de la realidad a nivel comunal.</p>
+    
+    <div class="comparacion">
+      <button mat-button color="primary" (click)="paintMap('IndiceBienestar','IDC2020_Bi', 'Bienestar')">• Bienestar: </button>
+      <p> El IDC de Bienestar, agrupa características como el porcentaje de hogares sin servicios básicos, el porcentaje de hogares en situación de pobreza, el porcentaje de cobertura de agua potable comunal y los años de vida potenciales perdidos para indicar que tan a gusto están las personas de esas comunas.</p>
+      <br>
+      <button mat-button color="primary" (click)="paintMap('IndiceEconomia','IDC2020_Ec', 'Economia')">• Economia: </button>
+      <p> El IDC de Economía, agrupa características como la dependencia etaria, los ingresos propios permanentes municipales, las conexiones a internet fijas por habitante, y el número de empresas por habitante, para así indicar que tan bien está la economía de cada comuna.</p>
+      <br>
+      <button mat-button color="primary" (click)="paintMap('IndiceEducacion','IDC2020_Ed', 'Educacion')">• Educación: </button>
+      <p> El IDC de Educación, agrupa características como el simce de lenguaje, el simce de matemáticas, las matrículas de párvulos, las matrículas
+        de enseñanza media, y los resultados PSU para indicar que tan altos o bajos son los niveles educacionales de cada comuna.</p>
+      <br>
+      <button mat-button color="primary" (click)="paintMap('IndiceGeneral','IDC2020_ID', 'General')">• General: </button>
+      <p> El IDC general, toma en consideración cada uno de los índices anteriores dándoles distintos pesos a cada uno de ellos. Muestra de una manera global que tanto se desarrolla una comuna.</p>
+    </div>
+
+    </mat-expansion-panel>
+
+
+    <!-- Delincuencia -->
+    <mat-expansion-panel (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false" [togglePosition]="'before'" #panel  hideToggle>
+    <mat-expansion-panel-header>
+      
+    <mat-panel-title>
+     
+      
+    Delincuencia
+    </mat-panel-title>
+    <mat-icon >{{panel.expanded? 'remove' : 'add'}}</mat-icon>
+
+    </mat-expansion-panel-header>
+    <hr>
+    <p>A partir de los datos recopilados del tercer trimestre del 2020 por la fundación <a href="https://datoscomunales.pazciudadana.cl/" target="_blank">Paz ciudadana</a>, la cual tiene como fuente de datos la Subsecretaria de prevención del delito de Chile, se calcularon distintas valores enfocados en la cantidad de cada uno de los siguientes tópicos relacionados a las tendencias delictuales, en donde cada una de estas se calculó cada cien mil habitantes por comuna.</p>
+    
+    <div class="comparacion">
+      <button mat-button color="primary" (click)="paintMap('IndiceDelitosClassified','TASA_DELIT', 'CasosPoliciales')">• Casos Policiales: </button>
+      <p> Son hechos o sucesos que se informan a la autoridad competente a través de un parte policial. Se compone de las denuncias y las detenciones. Considera todos aquellos Delitos de Mayor Connotación Social (DMCS), la cual Es una categoría que agrupa los siguientes
+        delitos : homicidio, hurto, lesiones, violación, robo de accesorios de vehículos, robo de
+        vehículo motorizado, robo en lugar habitado, otros robos con fuerza, robo con violencia
+        o intimidación y robos por sorpresa.</p>
+      <br>
+      <button mat-button color="primary" (click)="paintMap('IndiceDetenciones','TasaDelito', 'Detenciones')">• Detenciones: </button>
+      <p> Hace referencia a las situaciones en las cuales la policía toma conocimiento al efectuar una aprehensión en flagrancia.</p>
+      <br>
+      <button mat-button color="primary" (click)="paintMap('IndiceDenuncias','TasaDenunc', 'Denuncias')">• Denuncias: </button>
+      <p> Hace referencia a las situaciones en las que la ciudadanía realiza
+        declaración de algun posible delito en alguna unidad policial posterior a la ocurrencia del delito.</p>
+    </div>
+
+    </mat-expansion-panel>
+
+
+    <!-- Isocronas -->
+    <mat-expansion-panel (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false" [togglePosition]="'before'" #panel  hideToggle>
+    <mat-expansion-panel-header>
+    
+
+      
+    <mat-panel-title>
+    
+      
+    Cercanía a servicios
+    </mat-panel-title>
+    <mat-icon >{{panel.expanded? 'remove' : 'add'}}</mat-icon>
+
+    </mat-expansion-panel-header>
+    <hr>
+    <p>Tomando en consideración fuentes de datos extraídas de la <a href="https://www.ine.cl/" target="_blank"></a>INE de Chile, se calcularon todas aquellas zonas que tienen una distancia caminable aceptable hacia un punto de interés (isocronas). Con aceptable se hace referencia a todos aquellos lugares que estén a menos de 20 minutos de distancia de estos lugares. En este caso, se tomaron en cuenta las farmacias del país, y los establecimientos de salud. Se recomienda activar los marcadores de estos lugares a medida que se van probando las isocronas.</p>
+    
+    <div class="comparacion">
+      <button mat-button color="primary" (click)="chargeisocronas()">• Farmacias: </button>
+      <p> Las isocronas de farmacias, hacen referencia a la distancia caminable hasta llegar a almenos una farmacia. Esto puede indicar que tanta accesibilidad tiene los distinto sectores de cada una de las Comunas para comprar sus medicamentos.</p>
+      <br>
+      <button mat-button color="primary" (click)="chargeisocronas2()">• Establecimientos de Salud: </button>
+      <p> Las isocronas de establecimientos de salud, hacen referencia a la distancia caminable hasta llegar a almenos un servicio primario o secundario de salud público. Esto puede indicar que tanta accesibilidad tiene los distinto sectores de cada una de las Comunas para comprar atenderse con rápidez ante alguna adversidad y/o necesidad.</p>
+    </div>
+
+    </mat-expansion-panel>
+
+
+
+    <!-- Comparacion contra otros usuarios -->
+    <mat-expansion-panel (opened)="panelOpenState3 = true"
+      (closed)="panelOpenState3 = false" [togglePosition]="'before'" #panel2  hideToggle>
+    <mat-expansion-panel-header>
+      
+    <mat-panel-title>
+     
+      
+    Comparate con otros usuarios!
+    </mat-panel-title>
+    <mat-icon >{{panel2.expanded? 'remove' : 'add'}}</mat-icon>
+
+    </mat-expansion-panel-header>
+    <hr>
+    
+    <p>Nuevamente, tomando en consideración fuentes de datos extraídas de la <a href="https://www.ine.cl/" target="_blank"></a>INE de Chile, se realiza un cálculo georeferenciado de alguno de los puntos de interés mostrados a continuación, para así determinar aquel servicio que se encuentre más cercano a la posición del usuario. Además de esto, muestra que tan alejado se encuentra el usuario del promedio mínimo de distancia en linea recta, en relación al resto de usuarios de la misma Comuna que hayan solicitado esta información.</p>
+    
+    <div class="comparacion">
+      <button mat-button color="primary" (click)="farmacia()">• Farmacias: </button>
+      <p> Al realizar esta comparación, se calcula la distancia (en línea recta) a la Farmacia más cercana con respecto a tu posición, y luego la comparamos con el promedio de tu Comuna!. Descubre que tanto esfuerzo necesitas para obtener un medicamento en relación al resto de tu Comuna! </p>
+      <br>
+      <br>
+      <button mat-button color="primary" (click)="establecimiento()">• Establecimientos de Salud: </button>
+      <p> Al realizar esta comparación, se calcula la distancia (en línea recta) al Establecimiento de Salud más cercano con respecto a tu posición, y luego la comparamos con el promedio de tu Comuna!. Descubre que tanto debe recorrer para obtener atención médica en relación al resto de tu Comuna! </p>
+    </div>
+    
+  
+    </mat-expansion-panel>
+    
+
+     <!-- Otros -->
+     <mat-expansion-panel (opened)="panelOpenState = true"
+     (closed)="panelOpenState = false" [togglePosition]="'before'" #panel  hideToggle>
+   <mat-expansion-panel-header>
+     
+   <mat-panel-title>
+    
+     
+   Otros
+   </mat-panel-title>
+   <mat-icon >{{panel.expanded? 'remove' : 'add'}}</mat-icon>
+
+   </mat-expansion-panel-header>
+   <hr>
+    <p>En este apartado, se agrupan categorias que no tienen mucha relación entre sí, pero que de igual forma son interesantes y dejan ver una realidad sobre cada una de las comunas. Cada una de estas informaciones fueron obtenidas desde distintos sitios web.</p>
+   
+   <div class="comparacion">
+     <button mat-button color="primary" (click)="paintMap('IndiceFarmacias','indiceFina', 'Farmacia')">• Farmacias: </button>
+     <p> El indicador de farmacias, hace referencia a cuantas farmacias cada cien mil habitantes existen por comuna. Esto puede indicar que tanta accesibilidad a medicamentos tiene la población de dicha Comuna.</p>
+   
+   </div>
+
+   </mat-expansion-panel>
+</mat-accordion>
+</div>
+
+
+
+
+<div class="displayMapa">
+  
+  <ng-container *ngIf="isLoading">
+    <div class="waitingData">
+
+    </div>
+    <mat-spinner [diameter]="300" style="margin:0 auto;"></mat-spinner>
+  </ng-container>
+  <div id="map">
+    <ng-container *ngIf="!isLoading">
+      <ng-container *ngIf="indicadores">
+
+        <ng-container *ngIf="!isocronas" >
+          <mat-card>
+            <mat-slide-toggle (change)="activar($event)">Comparar Comunas</mat-slide-toggle>
+          </mat-card>
+        </ng-container>
+        
+        
+        <div class="leyenda">
+          <mat-accordion >
+            <mat-expansion-panel (opened)="panelOpenState2 = true"
+            (closed)="panelOpenState2 = false" >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+              Leyenda
+              </mat-panel-title>
+          
+              </mat-expansion-panel-header>
+          
+              <ng-container *ngFor="let color of colors; let i = index">
+                <br>
+                <div id="rectangle" [ngStyle]="{'background': color}">
+                  
+                </div>
+                <ng-container *ngIf="comparar">
+                  <p style="font-size: 15px; color: black; text-align: center; font: 'roboto,sans-serif';">{{categoriasComparar[i]}}</p>
+                </ng-container>
+                <ng-container *ngIf="!comparar">
+                  <p style="font-size: 15px; color: black; text-align: center; font: 'roboto,sans-serif';">{{categoriasIndices[i]}}</p>
+                </ng-container>
+                
+                
+              </ng-container>
+              
+          
+          </mat-expansion-panel>
+        
+          </mat-accordion>
+        </div>
+
+        
+      </ng-container>
+      
+     
+    </ng-container>
+    
+   
+    
+    
+  </div>
+
+</div>
+
+
+
+  
+
+<!--
+<div class="map-container">
+    <button mat-raised-button color="primary" (click)="farmacia()">Farmacia Más Cercana</button>
+    <div class="map-frame">
+     
+      <div id="map">
+        <mat-card>
+          <ng-container *ngFor="let color of colors; let i = index">
+            <br>
+            <div id="rectangle" [ngStyle]="{'background': color}">
+              
+            </div>
+            <p>{{categoriasNumeros[i]}}</p>
+          </ng-container>
+          
+        </mat-card>
+
+      </div>
+    </div>
+  </div>
+
+-->
+
