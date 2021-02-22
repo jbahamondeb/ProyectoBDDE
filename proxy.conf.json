@@ -1,0 +1,20 @@
+{
+    "/geoserver": {
+      "target": "http://localhost:8085/geoserver",
+      "secure": true,
+      "pathRewrite": {
+      "^/geoserver": ""
+    },
+    
+      "changeOrigin": true
+    },
+
+    "/backend": {
+      "target": "http://localhost:3000",
+      "secure": true,
+      "pathRewrite": {
+      "^/backend": ""
+    },
+      "changeOrigin":true
+    }
+  }
